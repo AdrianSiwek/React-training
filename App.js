@@ -1,9 +1,23 @@
 const header = <h1 className='title'>Witaj na mojej stronie!</h1>
-const main = div>h1+p
 
+const classBig = "big"
+const handleClick = ()=>alert("Click");
+const main = (
+<div>
+    <h1 onClick={handleClick} className="red">Pierwszy artykuł</h1>
+    <p>Lorem ipsum</p>
+</div>
+)
 
+const footer = (
+<footer>
+    <p className={classBig}>Stopka</p>
+</footer>
+)
 
+const app = [header, main, footer];
 
+ReactDOM.render(app, document.getElementById('root'));
 
 
 
