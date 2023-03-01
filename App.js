@@ -1,45 +1,34 @@
-const header = <h1 className='title'>Witaj na mojej stronie!</h1>
+class ShopingList extends React.Component {
+    state={
+        list1: "tomato",
+        list2: "cherry",
+        list3: "cola",
+        list4: "juice"
+    }
 
-const classBig = "big"
-const handleClick = ()=>alert("Click");
-const main = (
-<div>
-    <h1 onClick={handleClick} className="red">Pierwszy artykuł</h1>
-    <p>Lorem ipsum</p>
-</div>
-)
+    render(){
+        return (
+        <>
+        <h1>List Shoping</h1>
+        <ul>
+            <ItemList name={this.state.list1} example={2+2} />
+            <ItemList name={this.state.list2} example={2+2}/>
+            <ItemList name={this.state.list3} example={2+2}/>
+            <ItemList name={this.state.list4} example={2+2}/>
+        </ul>
+        </>
+        )
+    }
+}
 
-const footer = (
-<footer>
-    <p className={classBig}>Stopka</p>
-</footer>
-)
-
-const app = [header, main, footer];
-
-ReactDOM.render(app, document.getElementById('root'));
-
-
-
-
-// const element5 = (<div>
-//   <section></section>
-//   <section></section>
-// </div>)
-
-
-// class App extends React.Component {
-//   state = {
-//     counter: 0
-//   }
-//   render() {
-//     return (
-//       <div>
-//         <h1>Hello!</h1>
-//       </div>
-//     );
-//   }
-// }
+class ItemList extends React.Component {
+    render(){
+    return (
+        <li>{this.props.name} {this.props.example}</li>
+    )
+}
+}
 
 
-// ReactDOM.render(<App />, document.getElementById('root'))
+
+ReactDOM.render(<ShopingList />, document.getElementById('root'));
