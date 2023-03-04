@@ -1,52 +1,85 @@
-//Addition and subtraction
+
+// //Addition and subtraction
 
 
-class Counter extends React.Component {
+// class Counter extends React.Component {
 
-    state={
-        count:0,
-        result:this.props.result
-    }
-
-
-    handleMathClick(type, number) {
-        if(type === 'increment'){
-            this.setState(prevState => ({
-                count: prevState.count + 1,
-                result: prevState.result - number
-            }))
-        } else if(type === 'decrement'){
-            this.setState(prevState =>({
-                count: prevState.count +1,
-                result: prevState.result + number
-            }))
-        } else if (type === 'reset'){
-            this.setState(prevState =>({
-                count: prevState.count +1,
-                result: 0
-            }))
-        }
-    }
+//     state={
+//         count:0,
+//         result:this.props.result
+//     }
 
 
-    render(){
-        return(
-            <React.Fragment>
-            <button onClick ={() => this.handleMathClick('decrement', 1)}>+1</button>
+//     handleMathClick=(type, number)=> {
+//         // debugger
+//         if(type === 'decrement'){
+//             this.setState(prevState => ({
+//                 count: prevState.count + 1,
+//                 result: prevState.result - number
+//             }))
+//         } else if(type === 'increment'){
+//             this.setState(prevState =>({
+//                 count: prevState.count +1,
+//                 result: prevState.result + number
+//             }))
+//         } else if (type === 'reset'){
+//             this.setState(prevState =>({
+//                 count: prevState.count +1,
+//                 result: 0
+//             }))
+//         }
+//     }
+
+
+//     render(){
+//         return(
+//             <React.Fragment>
+//             <MathButton 
+//             name="-1" 
+//             number = "1" 
+//             type="decrement"
+//             click={this.handleMathClick}
+//             />
+//             <MathButton 
+//             name="Reset" 
+//             type="reset"
+//             click={this.handleMathClick}
+//             />
+//             <MathButton 
+//             name="+1" 
+//             number = "1" 
+//             type="increment"
+//             click={this.handleMathClick}
+//             />
+//             <ResultPanel count={this.state.count} result = {this.state.result}/>
+//             </React.Fragment>
+//         )
+//     }
+// }
+
+// const MathButton = (props) => {
+//     const number = parseInt(props.number)
+//     return(
+//         <button onClick = {() => props.click(props.type, number)}>{props.name}</button>
+//     )
+// }
+
+// const ResultPanel = (props) => {
+//     return(
+//         <>
+//         <h1>Liczba kliknięć :{props.count}{props.count>10?<span>Przeciążenie procesora</span>:null}</h1>
+//             <h1>Wynik :{props.result}</h1>
+//         </>
+//     )
+// }
+
+// const StartValue = 0
+// ReactDOM.render(<Counter result = {StartValue} />, document.getElementById('root'));
+
+
+{/* <button onClick ={() => this.handleMathClick('decrement', 1)}>+1</button>
             <button onClick ={this.handleMathClick.bind(this, 'increment', 1)}>-1</button>
-            <button onClick={this.handleMathClick.bind(this, 'reset')}>Reset</button>
-            <h1>Liczba kliknięć :{this.state.count}</h1>
-            <h1>Wynik :{this.state.result}</h1>
-            </React.Fragment>
-        )
-    }
-}
-
-const StartValue = 0
-ReactDOM.render(<Counter result = {StartValue} />, document.getElementById('root'));
-
-
-
+            <button onClick={this.handleMathClick.bind(this, 'reset')}>Reset</button> */}
 
 
 //Show/hide button
