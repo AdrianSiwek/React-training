@@ -1,7 +1,21 @@
-const PositiveMessage = () => <p>Możesz obejrzeć film. Zapraszamy!</p>;
+// const PositiveMessage = () => <p>Możesz obejrzeć film. Zapraszamy!</p>;
 
-const NegativeMessage = () => <p>Nie możesz obejrzeć filmu. Musisz mieć ukończone 16 lat!</p>
+// const NegativeMessage = () => <p>Nie możesz obejrzeć filmu. Musisz mieć ukończone 16 lat!</p>
+const ValidationMessage = (props) => <p>{props.txt}</p>
 
+const OrderForm = (props) => (
+    <form onSubmit={props.submit}>
+            <input 
+            type="checkbox" 
+            id='age' 
+            onChange = {props.change} 
+            checked ={props.checked}
+            />
+            <label htmlFor="age">Mam conajmniej 16 lat</label>
+            <br />
+            <button>Kup bilet</button>
+    </form>
+)
 
 
 class TicketShop extends React.Component {
@@ -29,9 +43,9 @@ class TicketShop extends React.Component {
     displayMessage = ()=>{
         if(this.state.isFormSubmitted){
         if(this.state.isConfirmed){
-            return <PositiveMessage />
+            return <ValidationMessage txt="Możesz obejrzeć film. Zapraszamy!"/>
         } else {
-            return <NegativeMessage />
+            return <ValidationMessage txt="Nie możesz obejrzeć filmu. Musisz mieć ukończone 16 lat!"/>
         }
     }else {return null}
     }
@@ -40,17 +54,11 @@ class TicketShop extends React.Component {
         return (
             <>
             <h1>Kup bilet na horror roku!!!</h1>
-            <form onSubmit={this.handleFormSubmit}>
-            <input 
-            type="checkbox" 
-            id='age' 
-            onChange = {this.handleCheckboxChange} 
-            checked ={this.isConfirmed}
+            <OrderForm 
+                change ={this.handleCheckboxChange}
+                submit = {this.handleFormSubmit}
+                checked ={this.isConfirmed}
             />
-            <label htmlFor="age">Mam conajmniej 16 lat</label>
-            <br />
-            <button>Kup bilet</button>
-            </form>
             {this.displayMessage()}
             </>
         )
